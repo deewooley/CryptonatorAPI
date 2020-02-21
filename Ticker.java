@@ -6,21 +6,31 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Ticker {
 
 
-    private BaseComp based;
+    private BaseComp baseComp;
     private String timestamp;
     private String success;
     private String error;
     private String value;
+    private String target;
 
 
-    public Ticker(String timestamp, String success, String error, String value ) {
+    public Ticker(String timestamp, String success, String error, String value, String target) {
        this.timestamp = timestamp;
        this.success = success;
        this.error = error;
        this.value = value;
+       this.target = target;
     }
 
     public Ticker() {
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
     }
 
     public String getValue() {
@@ -56,18 +66,18 @@ public class Ticker {
     }
 
     public BaseComp getBase() {
-        return based;
+        return baseComp;
     }
 
     public void setBaseComp(BaseComp based) {
-        this.based = based;
+        this.baseComp = based;
     }
 
 
     @Override
     public String toString() {
         return "ticker: "  + " timestamp: "  +
-                 timestamp+ '\"' + based+
+                 timestamp+ '\"' + baseComp+target+
                 ", success= " + success +
                  ", error :\""+error+"\" ";
     }

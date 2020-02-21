@@ -2,7 +2,7 @@ package com.deesworld.practiceAPI;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BaseComp {
+public class BaseComp extends Ticker {
 
 
     private String base;

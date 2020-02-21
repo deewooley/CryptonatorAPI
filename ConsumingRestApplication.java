@@ -1,7 +1,5 @@
 package com.deesworld.practiceAPI;
 
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -18,12 +16,11 @@ public class ConsumingRestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ConsumingRestApplication.class, args);
-
-
 	}
 
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+
 		return builder.build();
 	}
 
@@ -33,8 +30,6 @@ public class ConsumingRestApplication {
 
 			Ticker ticker = restTemplate.getForObject(
 					"https://api.cryptonator.com/api/ticker/btc-usd", Ticker.class);
-
-
 			log.info(ticker.toString());
 
 		};
