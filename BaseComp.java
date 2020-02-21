@@ -2,16 +2,18 @@ package com.deesworld.practiceAPI;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Base {
-//QUOTE
+public class BaseComp {
+
+
     private String base;
     private String target;
-    private String price;
+    private long price;
     private String volume;
     private String change;
 
-    public Base() {
+    public BaseComp() {
     }
+
 
     public String getBase() {
         return this.base;
@@ -27,10 +29,10 @@ public class Base {
         this.target= target;
     }
 
-    public String getPrice() {
+    public long getPrice() {
         return this.price;
     }
-    public void setPrice(String price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -53,7 +55,7 @@ public class Base {
     public String toString() {
         return "{" +
                 "id=" + base +
-                ", quote='" + getTarget() + '\'' + price +" "+ volume +" "+ change +
+                ", quote='" + target + '\'' + price +" "+ volume +" "+ change +
                 '}';
     }
 }

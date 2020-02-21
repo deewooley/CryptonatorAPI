@@ -31,12 +31,11 @@ public class ConsumingRestApplication {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 
-			Ticker result = restTemplate.getForObject(
+			Ticker ticker = restTemplate.getForObject(
 					"https://api.cryptonator.com/api/ticker/btc-usd", Ticker.class);
-			Base result2 = restTemplate.getForObject(
-					"https://api.cryptonator.com/api/ticker/btc-usd", Base.class);
 
-			log.info(result.toString());
+
+			log.info(ticker.toString());
 
 		};
 	}
