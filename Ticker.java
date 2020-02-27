@@ -1,84 +1,70 @@
 package com.deesworld.practiceAPI;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticker {
 
 
-    private BaseComp baseComp;
-    private String timestamp;
-    private String success;
-    private String error;
-    private String value;
+    private String base;
     private String target;
+    private String price;
+    private String volume;
+    private String change;
 
+//    public Ticker() {
+//    }
 
-    public Ticker(String timestamp, String success, String error, String value, String target) {
-       this.timestamp = timestamp;
-       this.success = success;
-       this.error = error;
-       this.value = value;
-       this.target = target;
+    public Ticker(String base, String target, String price, String volume, String change) {
+        this.base = base;
+        this.target = target;
+        this.price = price;
+        this.volume = volume;
+        this.change = change;
     }
 
-    public Ticker() {
+    public String getBase() {
+        return this.base;
+    }
+    public void setBase(String base) {
+        this.base= base;
     }
 
     public String getTarget() {
-        return target;
+        return this.target;
     }
-
     public void setTarget(String target) {
-        this.target = target;
+        this.target= target;
     }
 
-    public String getValue() {
-        return value;
+    public String getPrice() {
+        return this.price;
+    }
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public String getVolume() {
+        return this.volume;
+    }
+    public void setVolume(String volume) {
+        this.volume = volume;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public String getChange() {
+        return this.change;
     }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setChange(String change) {
+        this.change = change;
     }
-
-    public String getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(String success) {
-        this.success = success;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    public BaseComp getBase() {
-        return baseComp;
-    }
-
-    public void setBaseComp(BaseComp based) {
-        this.baseComp = based;
-    }
-
 
     @Override
     public String toString() {
-        return "ticker: "  + " timestamp: "  +
-                 timestamp+ '\"' + baseComp+target+
-                ", success= " + success +
-                 ", error :\""+error+"\" ";
+        return "Ticker{" +
+                "base='" + base + '\'' +
+                ", target='" + target + '\'' +
+                ", price=" + price +
+                ", volume='" + volume + '\'' +
+                ", change='" + change + '\'' +
+                '}';
     }
 }

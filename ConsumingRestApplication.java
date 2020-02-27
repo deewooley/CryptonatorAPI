@@ -28,9 +28,9 @@ public class ConsumingRestApplication {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 
-			Ticker ticker = restTemplate.getForObject(
-					"https://api.cryptonator.com/api/ticker/btc-usd", Ticker.class);
-			log.info(ticker.toString());
+			Crypto crypto = restTemplate.getForObject(
+					"https://api.cryptonator.com/api/ticker/btc-usd", Crypto.class);
+			log.info(crypto.toString());
 
 		};
 	}
